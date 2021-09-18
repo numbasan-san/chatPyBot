@@ -28,15 +28,15 @@ def inicio_juego ():
 
 def tablero ():
     print ("         |         |         ")
-    print ("1    {}   |2    {}   |3    {}   ".format (matriz [0], matriz [1], matriz [2]))
+    print ("7   {}    |8   {}    |9   {}    ".format (matriz [6], matriz [7], matriz [8]))
     print ("         |         |         ")
-    print ("---------------------------")
+    print ("-----------------------------")
     print ("         |         |         ")
-    print ("4    {}   |5    {}   |6    {}   ".format (matriz [3], matriz [4], matriz [5]))
+    print ("4   {}    |5   {}    |6   {}    ".format (matriz [3], matriz [4], matriz [5]))
     print ("         |         |         ")
-    print ("---------------------------")
+    print ("-----------------------------")
     print ("         |         |         ")
-    print ("7   {}    |8   {}    |9    {}   ".format (matriz [6], matriz [7], matriz [8]))
+    print ("1   {}    |2   {}    |3   {}    ".format (matriz [0], matriz [1], matriz [2]))
     print ("         |         |         \n")
 
 def empate (matriz):
@@ -71,7 +71,7 @@ def victoria (matriz):
 def movimiento_jugador ():
 
     while True:
-        posiciones = [0, 1, 2, 3, 4, 5, 6, 7, 8]
+        posiciones = [1, 2, 3, 4, 5, 6, 7, 8, 9]
         casilla = int ( input ("Tú: Casilla #"))
 
         if casilla not in posiciones:
@@ -158,11 +158,9 @@ while True:
         elif empate (matriz):
             print ("/*           Empate           */\n" + 
                    "/*        Fin del Juego       */\n" + 
-                   "/*     Regresando al chat     */")
+                   "/*     Reiniciando partida   */")
             time.sleep (5)
-            partida = False
-            os.system ("cls")
-            os.system ("python main.py")
+            partida = True
             break
             
         elif ganador % 2 == 0:
